@@ -21,13 +21,13 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
       <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-md border-b border-gray-100 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
               <img
                 src="/Gemini_Generated_Image_majm7smajm7smajm.png"
                 alt="Mindshift Logo"
-                className="w-10 h-10 object-contain"
+                className="w-16 h-16 object-contain drop-shadow-md"
               />
-              <span className="text-xl font-semibold text-gray-800">Mindshift</span>
+              <span className="text-2xl font-semibold text-gray-800">Mindshift</span>
             </div>
 
             <div className="hidden md:flex items-center gap-8">
@@ -135,7 +135,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                   <img
                     src="/Gemini_Generated_Image_majm7smajm7smajm.png"
                     alt="Mindshift Logo"
-                    className="w-12 h-12 object-contain"
+                    className="w-16 h-16 object-contain drop-shadow-lg"
                   />
                   <div>
                     <div className="font-semibold text-gray-900">MindShift AI</div>
@@ -669,11 +669,11 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div>
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-3 mb-4">
                 <img
                   src="/Gemini_Generated_Image_majm7smajm7smajm.png"
                   alt="Mindshift Logo"
-                  className="w-10 h-10 object-contain"
+                  className="w-14 h-14 object-contain drop-shadow-lg"
                 />
                 <span className="text-xl font-semibold text-white">Mindshift</span>
               </div>

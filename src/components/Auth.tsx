@@ -60,15 +60,15 @@ export function Auth() {
 
       <div className="w-full max-w-md relative">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center mb-4">
+          <div className="inline-flex items-center justify-center mb-6">
             <img
               src="/Gemini_Generated_Image_majm7smajm7smajm.png"
               alt="Mindshift Logo"
-              className="w-24 h-24 object-contain"
+              className="w-40 h-40 object-contain drop-shadow-2xl"
             />
           </div>
-          <h1 className="text-3xl font-semibold text-gray-800 mb-2">Mindshift</h1>
-          <p className="text-gray-600">Your journey to mindful growth</p>
+          <h1 className="text-4xl font-bold text-gray-800 mb-3">Mindshift</h1>
+          <p className="text-lg text-gray-600">Your journey to mindful growth</p>
         </div>
 
         <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl p-8 border border-gray-100">
