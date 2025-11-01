@@ -221,7 +221,7 @@ export function Auth() {
                 setIsSignUp(!isSignUp);
                 setError('');
               }}
-              className="text-sm text-gray-600 hover:text-pink-500 transition-colors active:scale-95"
+              className="text-sm text-gray-600 hover:text-blue-500 transition-colors active:scale-95"
             >
               {isSignUp ? 'Already have an account? Sign in' : "Don't have an account? Sign up"}
             </button>
