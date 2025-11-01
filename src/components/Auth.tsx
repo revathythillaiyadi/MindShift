@@ -62,9 +62,10 @@ export function Auth() {
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center mb-6">
             <img
-              src="/Gemini_Generated_Image_majm7smajm7smajm.png"
+              src="/Gemini_Generated_Image_1q4q5f1q4q5f1q4q.png"
               alt="Mindshift Logo"
-              className="w-40 h-40 object-contain drop-shadow-2xl"
+              className="w-40 h-40 object-contain"
+              style={{ imageRendering: 'high-quality' }}
             />
           </div>
           <h1 className="text-4xl font-bold text-gray-800 mb-3">Mindshift</h1>

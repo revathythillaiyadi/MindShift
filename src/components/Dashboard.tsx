@@ -21,9 +21,10 @@ export function Dashboard() {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img
-              src="/Gemini_Generated_Image_majm7smajm7smajm.png"
+              src="/Gemini_Generated_Image_1q4q5f1q4q5f1q4q.png"
               alt="Mindshift Logo"
-              className="w-14 h-14 object-contain drop-shadow-lg"
+              className="w-14 h-14 object-contain"
+              style={{ imageRendering: 'high-quality' }}
             />
             <h1 className="text-2xl font-semibold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
               Mindshift

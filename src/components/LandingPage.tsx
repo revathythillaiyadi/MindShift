@@ -23,9 +23,10 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-3">
               <img
-                src="/Gemini_Generated_Image_majm7smajm7smajm.png"
+                src="/Gemini_Generated_Image_1q4q5f1q4q5f1q4q.png"
                 alt="Mindshift Logo"
-                className="w-16 h-16 object-contain drop-shadow-md"
+                className="w-16 h-16 object-contain"
+                style={{ imageRendering: 'high-quality' }}
               />
               <span className="text-2xl font-semibold text-gray-800">Mindshift</span>
             </div>
@@ -133,9 +134,10 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
               <div className="relative bg-white rounded-3xl shadow-2xl p-8 border border-gray-100">
                 <div className="flex items-center gap-3 mb-6">
                   <img
-                    src="/Gemini_Generated_Image_majm7smajm7smajm.png"
+                    src="/Gemini_Generated_Image_1q4q5f1q4q5f1q4q.png"
                     alt="Mindshift Logo"
-                    className="w-16 h-16 object-contain drop-shadow-lg"
+                    className="w-16 h-16 object-contain"
+                    style={{ imageRendering: 'high-quality' }}
                   />
                   <div>
                     <div className="font-semibold text-gray-900">MindShift AI</div>
@@ -671,9 +673,10 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <img
-                  src="/Gemini_Generated_Image_majm7smajm7smajm.png"
+                  src="/Gemini_Generated_Image_1q4q5f1q4q5f1q4q.png"
                   alt="Mindshift Logo"
-                  className="w-14 h-14 object-contain drop-shadow-lg"
+                  className="w-14 h-14 object-contain"
+                  style={{ imageRendering: 'high-quality' }}
                 />
                 <span className="text-xl font-semibold text-white">Mindshift</span>
               </div>
