@@ -22,7 +22,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 via-teal-500 to-green-500 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-pink-500 via-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
                 <Brain className="w-5 h-5 text-white" />
               </div>
               <span className="text-xl font-semibold text-gray-800">Mindshift</span>
@@ -44,7 +44,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
               <button onClick={() => scrollToSection('sos')} className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors font-medium">
                 SOS
               </button>
-              <button onClick={onGetStarted} className="px-6 py-2 bg-gradient-to-r from-blue-500 to-teal-500 text-white rounded-lg hover:shadow-lg transition-all font-medium">
+              <button onClick={onGetStarted} className="px-6 py-2 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white rounded-lg hover:shadow-lg transition-all font-medium">
                 Get Started
               </button>
             </div>
@@ -76,7 +76,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
               <button onClick={() => scrollToSection('sos')} className="block w-full text-left px-4 py-2 bg-red-50 text-red-600 rounded-lg font-medium">
                 SOS
               </button>
-              <button onClick={onGetStarted} className="block w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-teal-500 text-white rounded-lg font-medium">
+              <button onClick={onGetStarted} className="block w-full px-6 py-3 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white rounded-lg font-medium">
                 Get Started
               </button>
             </div>
@@ -84,13 +84,13 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
         )}
       </nav>
 
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 via-teal-50 to-green-50">
+      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 leading-tight mb-6">
                 Your Journey to{' '}
-                <span className="bg-gradient-to-r from-blue-600 via-teal-600 to-green-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
                   Mindful Growth
                 </span>
               </h1>
@@ -100,7 +100,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
                   onClick={onGetStarted}
-                  className="px-8 py-4 bg-gradient-to-r from-blue-500 to-teal-500 text-white rounded-xl font-medium hover:shadow-xl transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2"
+                  className="px-8 py-4 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white rounded-xl font-medium hover:shadow-xl transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2"
                 >
                   Start Your Journey <ChevronRight className="w-5 h-5" />
                 </button>
@@ -113,29 +113,29 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
               </div>
               <div className="mt-12 grid grid-cols-3 gap-8">
                 <div>
-                  <div className="text-3xl font-bold text-blue-600 mb-1">24/7</div>
+                  <div className="text-3xl font-bold text-pink-600 mb-1">24/7</div>
                   <div className="text-sm text-gray-600">Available Support</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-teal-600 mb-1">10k+</div>
+                  <div className="text-3xl font-bold text-purple-600 mb-1">10k+</div>
                   <div className="text-sm text-gray-600">Active Users</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-green-600 mb-1">98%</div>
+                  <div className="text-3xl font-bold text-blue-600 mb-1">98%</div>
                   <div className="text-sm text-gray-600">Satisfaction Rate</div>
                 </div>
               </div>
             </div>
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-teal-400 rounded-3xl opacity-20 blur-3xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-pink-400 to-blue-400 rounded-3xl opacity-20 blur-3xl"></div>
               <div className="relative bg-white rounded-3xl shadow-2xl p-8 border border-gray-100">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-teal-500 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-blue-500 rounded-full flex items-center justify-center">
                     <Brain className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900">MindShift AI</div>
-                    <div className="text-sm text-green-600 flex items-center gap-1">
+                    <div className="text-sm text-purple-600 flex items-center gap-1">
                       <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                       Available now
                     </div>
@@ -146,7 +146,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                     <div className="text-sm text-gray-600 mb-2">How are you feeling today?</div>
                     <div className="text-gray-800">I'm feeling a bit anxious about tomorrow...</div>
                   </div>
-                  <div className="bg-gradient-to-r from-blue-500 to-teal-500 rounded-2xl p-4 text-white">
+                  <div className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-2xl p-4 text-white">
                     <div className="text-sm opacity-90 mb-2">MindShift AI</div>
                     <div>I hear you. Anxiety about the future is common. Let's work through this together. Can you tell me what specifically is worrying you?</div>
                   </div>
@@ -167,8 +167,8 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <div className="bg-gradient-to-br from-blue-50 to-teal-50 rounded-2xl p-8 border border-blue-100">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-teal-500 rounded-xl flex items-center justify-center mb-4">
+            <div className="bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl p-8 border border-pink-100">
+              <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-500 rounded-xl flex items-center justify-center mb-4">
                 <Heart className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Our Mission</h3>
@@ -177,8 +177,8 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-teal-50 to-green-50 rounded-2xl p-8 border border-teal-100">
-              <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-green-500 rounded-xl flex items-center justify-center mb-4">
+            <div className="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8 border border-purple-100">
+              <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-500 rounded-xl flex items-center justify-center mb-4">
                 <Shield className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Our Values</h3>
@@ -187,8 +187,8 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl p-8 border border-green-100">
-              <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-blue-500 rounded-xl flex items-center justify-center mb-4">
+            <div className="bg-gradient-to-br from-blue-50 to-pink-50 rounded-2xl p-8 border border-blue-100">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-pink-500 rounded-xl flex items-center justify-center mb-4">
                 <TrendingUp className="w-6 h-6 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Our Vision</h3>
@@ -198,7 +198,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-500 to-teal-500 rounded-3xl p-12 text-white">
+          <div className="bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-3xl p-12 text-white">
             <div className="max-w-3xl mx-auto text-center">
               <h3 className="text-3xl font-bold mb-4">Why Choose MindShift?</h3>
               <p className="text-lg opacity-90 mb-8">
@@ -227,7 +227,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
         </div>
       </section>
 
-      <section id="resources" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section id="resources" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-pink-50 to-blue-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Resources</h2>
@@ -251,27 +251,27 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
             </div>
 
             <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
-              <div className="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center mb-4">
-                <Heart className="w-6 h-6 text-teal-600" />
+              <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                <Heart className="w-6 h-6 text-purple-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Meditation & Relaxation</h3>
               <p className="text-gray-600 mb-4">
                 Guided meditations, breathing exercises, and relaxation techniques to calm your mind and reduce anxiety.
               </p>
-              <button className="text-teal-600 font-medium flex items-center gap-1 hover:gap-2 transition-all">
+              <button className="text-purple-600 font-medium flex items-center gap-1 hover:gap-2 transition-all">
                 Start Meditating <ChevronRight className="w-4 h-4" />
               </button>
             </div>
 
             <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
               <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-4">
-                <MessageCircle className="w-6 h-6 text-green-600" />
+                <MessageCircle className="w-6 h-6 text-purple-600" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Cognitive Reframing</h3>
               <p className="text-gray-600 mb-4">
                 Learn techniques to challenge negative thoughts and develop healthier thinking patterns using CBT principles.
               </p>
-              <button className="text-green-600 font-medium flex items-center gap-1 hover:gap-2 transition-all">
+              <button className="text-purple-600 font-medium flex items-center gap-1 hover:gap-2 transition-all">
                 Learn More <ChevronRight className="w-4 h-4" />
               </button>
             </div>
@@ -329,39 +329,39 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-8 border border-gray-100">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-teal-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">
+              <div className="w-20 h-20 bg-gradient-to-br from-pink-500 via-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">
                 DS
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Dr. Sarah Chen, PhD</h3>
-              <div className="text-sm text-teal-600 font-medium mb-3">Clinical Psychologist</div>
+              <div className="text-sm text-purple-600 font-medium mb-3">Clinical Psychologist</div>
               <p className="text-gray-600 mb-4 text-sm leading-relaxed">
                 Specializes in Cognitive Behavioral Therapy and anxiety disorders. 15+ years of clinical experience helping individuals reframe negative thought patterns.
               </p>
               <div className="flex flex-wrap gap-2">
                 <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">CBT</span>
-                <span className="px-3 py-1 bg-teal-100 text-teal-700 rounded-full text-xs font-medium">Anxiety</span>
+                <span className="px-3 py-1 bg-purple-100 text-teal-700 rounded-full text-xs font-medium">Anxiety</span>
                 <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">Depression</span>
               </div>
             </div>
 
             <div className="bg-gradient-to-br from-teal-50 to-white rounded-2xl p-8 border border-gray-100">
-              <div className="w-20 h-20 bg-gradient-to-br from-teal-500 to-green-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">
+              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">
                 MR
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Dr. Marcus Rodriguez, PsyD</h3>
-              <div className="text-sm text-green-600 font-medium mb-3">Licensed Therapist</div>
+              <div className="text-sm text-purple-600 font-medium mb-3">Licensed Therapist</div>
               <p className="text-gray-600 mb-4 text-sm leading-relaxed">
                 Expert in mindfulness-based therapies and stress reduction. Passionate about making mental health tools accessible to everyone through technology.
               </p>
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-teal-100 text-teal-700 rounded-full text-xs font-medium">Mindfulness</span>
+                <span className="px-3 py-1 bg-purple-100 text-teal-700 rounded-full text-xs font-medium">Mindfulness</span>
                 <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">Stress</span>
                 <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">MBSR</span>
               </div>
             </div>
 
             <div className="bg-gradient-to-br from-green-50 to-white rounded-2xl p-8 border border-gray-100">
-              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-blue-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-pink-500 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-4">
                 AJ
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Dr. Aisha Johnson, LMFT</h3>
@@ -372,7 +372,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
               <div className="flex flex-wrap gap-2">
                 <span className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">Relationships</span>
                 <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">Communication</span>
-                <span className="px-3 py-1 bg-teal-100 text-teal-700 rounded-full text-xs font-medium">EFT</span>
+                <span className="px-3 py-1 bg-purple-100 text-teal-700 rounded-full text-xs font-medium">EFT</span>
               </div>
             </div>
           </div>
@@ -400,12 +400,12 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-teal-500 rounded-2xl flex items-center justify-center flex-shrink-0">
+                <div className="w-14 h-14 bg-gradient-to-br from-pink-500 via-purple-500 to-blue-500 rounded-2xl flex items-center justify-center flex-shrink-0">
                   <MessageCircle className="w-7 h-7 text-white" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold text-gray-900 mb-2">AI-Powered Chat Therapy</h3>
-                  <div className="text-sm text-teal-600 font-medium mb-3">Available 24/7</div>
+                  <div className="text-sm text-purple-600 font-medium mb-3">Available 24/7</div>
                 </div>
               </div>
               <p className="text-gray-600 mb-4 leading-relaxed">
@@ -429,12 +429,12 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
 
             <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-14 h-14 bg-gradient-to-br from-teal-500 to-green-500 rounded-2xl flex items-center justify-center flex-shrink-0">
+                <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-blue-500 rounded-2xl flex items-center justify-center flex-shrink-0">
                   <Heart className="w-7 h-7 text-white" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold text-gray-900 mb-2">Mood Tracking</h3>
-                  <div className="text-sm text-green-600 font-medium mb-3">Daily Check-ins</div>
+                  <div className="text-sm text-purple-600 font-medium mb-3">Daily Check-ins</div>
                 </div>
               </div>
               <p className="text-gray-600 mb-4 leading-relaxed">
@@ -458,7 +458,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
 
             <div className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
               <div className="flex items-start gap-4 mb-4">
-                <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-blue-500 rounded-2xl flex items-center justify-center flex-shrink-0">
+                <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-pink-500 rounded-2xl flex items-center justify-center flex-shrink-0">
                   <BookOpen className="w-7 h-7 text-white" />
                 </div>
                 <div>
@@ -518,7 +518,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
           <div className="mt-12 text-center">
             <button
               onClick={onGetStarted}
-              className="px-10 py-4 bg-gradient-to-r from-blue-500 to-teal-500 text-white rounded-xl font-medium hover:shadow-xl transition-all transform hover:-translate-y-1 inline-flex items-center gap-2 text-lg"
+              className="px-10 py-4 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white rounded-xl font-medium hover:shadow-xl transition-all transform hover:-translate-y-1 inline-flex items-center gap-2 text-lg"
             >
               Try All Features Free <ChevronRight className="w-5 h-5" />
             </button>
@@ -603,11 +603,11 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Phone className="w-6 h-6 text-teal-600" />
+                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <Phone className="w-6 h-6 text-purple-600" />
                 </div>
                 <h4 className="font-semibold text-gray-900 mb-1">SAMHSA Helpline</h4>
-                <a href="tel:1-800-662-4357" className="text-teal-600 font-medium hover:underline">
+                <a href="tel:1-800-662-4357" className="text-purple-600 font-medium hover:underline">
                   1-800-662-HELP
                 </a>
                 <p className="text-sm text-gray-600 mt-1">Treatment referral services</p>
@@ -615,10 +615,10 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
 
               <div className="text-center">
                 <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Mail className="w-6 h-6 text-green-600" />
+                  <Mail className="w-6 h-6 text-purple-600" />
                 </div>
                 <h4 className="font-semibold text-gray-900 mb-1">Veterans Crisis Line</h4>
-                <a href="tel:988" className="text-green-600 font-medium hover:underline">
+                <a href="tel:988" className="text-purple-600 font-medium hover:underline">
                   Press 1 after calling 988
                 </a>
                 <p className="text-sm text-gray-600 mt-1">Support for veterans and families</p>
@@ -645,7 +645,7 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-500 to-teal-500 text-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Start Your Journey?</h2>
           <p className="text-xl mb-8 opacity-90">
