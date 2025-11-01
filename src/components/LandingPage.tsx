@@ -22,9 +22,11 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-pink-500 via-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
-                <Brain className="w-5 h-5 text-white" />
-              </div>
+              <img
+                src="/Gemini_Generated_Image_majm7smajm7smajm.png"
+                alt="Mindshift Logo"
+                className="w-10 h-10 object-contain"
+              />
               <span className="text-xl font-semibold text-gray-800">Mindshift</span>
             </div>
 
@@ -130,9 +132,11 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
               <div className="absolute inset-0 bg-gradient-to-br from-pink-400 to-blue-400 rounded-3xl opacity-20 blur-3xl"></div>
               <div className="relative bg-white rounded-3xl shadow-2xl p-8 border border-gray-100">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-blue-500 rounded-full flex items-center justify-center">
-                    <Brain className="w-6 h-6 text-white" />
-                  </div>
+                  <img
+                    src="/Gemini_Generated_Image_majm7smajm7smajm.png"
+                    alt="Mindshift Logo"
+                    className="w-12 h-12 object-contain"
+                  />
                   <div>
                     <div className="font-semibold text-gray-900">MindShift AI</div>
                     <div className="text-sm text-purple-600 flex items-center gap-1">
@@ -666,9 +670,11 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 via-teal-500 to-green-500 rounded-lg flex items-center justify-center">
-                  <Brain className="w-5 h-5 text-white" />
-                </div>
+                <img
+                  src="/Gemini_Generated_Image_majm7smajm7smajm.png"
+                  alt="Mindshift Logo"
+                  className="w-10 h-10 object-contain"
+                />
                 <span className="text-xl font-semibold text-white">Mindshift</span>
               </div>
               <p className="text-sm text-gray-400">

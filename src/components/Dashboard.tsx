@@ -20,9 +20,11 @@ export function Dashboard() {
       <nav className="relative bg-white/60 backdrop-blur-md border-b border-gray-100 px-6 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-pink-500 via-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
-              <Brain className="w-5 h-5 text-white" />
-            </div>
+            <img
+              src="/Gemini_Generated_Image_majm7smajm7smajm.png"
+              alt="Mindshift Logo"
+              className="w-10 h-10 object-contain"
+            />
             <h1 className="text-2xl font-semibold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
               Mindshift
             </h1>

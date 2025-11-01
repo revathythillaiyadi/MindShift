@@ -60,8 +60,12 @@ export function Auth() {
 
       <div className="w-full max-w-md relative">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-pink-500 via-purple-500 to-blue-500 rounded-2xl mb-4 shadow-lg animate-pulse">
-            <Brain className="w-8 h-8 text-white" />
+          <div className="inline-flex items-center justify-center mb-4">
+            <img
+              src="/Gemini_Generated_Image_majm7smajm7smajm.png"
+              alt="Mindshift Logo"
+              className="w-24 h-24 object-contain"
+            />
           </div>
           <h1 className="text-3xl font-semibold text-gray-800 mb-2">Mindshift</h1>
           <p className="text-gray-600">Your journey to mindful growth</p>
