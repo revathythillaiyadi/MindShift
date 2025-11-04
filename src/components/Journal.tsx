@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { BookOpen, Mic, MicOff, Trash2, Edit3, X, Settings, Save, Menu, Plus, ChevronLeft } from 'lucide-react';
+import { BookOpen, Mic, MicOff, Trash2, Edit3, Settings, Save, Menu, Plus, ChevronLeft } from 'lucide-react';
 import { supabase, JournalEntry } from '../lib/supabase';
 import { useAuth } from '../contexts/AuthContext';
 import { webhookService } from '../lib/webhook';
@@ -26,7 +26,7 @@ export function Journal({ onOpenSettings }: JournalProps = {}) {
 
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
   const recognitionRef = useRef<any>(null);
-  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
+  // const mediaRecorderRef = useRef<MediaRecorder | null>(null); // Reserved for future use
   const audioContextRef = useRef<AudioContext | null>(null);
   const analyserRef = useRef<AnalyserNode | null>(null);
   const animationFrameRef = useRef<number | null>(null);
@@ -74,7 +74,7 @@ export function Journal({ onOpenSettings }: JournalProps = {}) {
   }, []);
 
   const loadJournalEntries = async () => {
-    if (!user) return;
+    if (!user || !supabase) return;
 
     const { data, error } = await supabase
       .from('journal_entries')
@@ -242,7 +242,7 @@ export function Journal({ onOpenSettings }: JournalProps = {}) {
   };
 
   const updateEntryTitle = async (entryId: string, newTitle: string) => {
-    if (!user || !newTitle.trim()) return;
+    if (!user || !newTitle.trim() || !supabase) return;
 
     try {
       const { error } = await supabase
@@ -265,7 +265,7 @@ export function Journal({ onOpenSettings }: JournalProps = {}) {
   };
 
   const updateEntryContent = async (entryId: string, newContent: string) => {
-    if (!user || !newContent.trim()) return;
+    if (!user || !newContent.trim() || !supabase) return;
 
     try {
       const { error } = await supabase

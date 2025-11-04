@@ -84,11 +84,13 @@ export function StreaksAndAchievements() {
     }
 
     // Send goal completion to n8n webhook
-    webhookService.sendGoalEvent({
-      title: goal.title,
-      completed: !goal.completed,
-      action: !goal.completed ? 'completed' : 'uncompleted',
-    }, user.id);
+    if (user) {
+      webhookService.sendGoalEvent({
+        title: goal.title,
+        completed: !goal.completed,
+        action: !goal.completed ? 'completed' : 'uncompleted',
+      }, user.id);
+    }
 
     loadGoals();
   };

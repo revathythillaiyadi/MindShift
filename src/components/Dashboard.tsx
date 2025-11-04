@@ -1,4 +1,4 @@
-import { LogOut, Brain } from 'lucide-react';
+import { LogOut } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { ChatBot } from './ChatBot';
 import { ProgressTracker } from './ProgressTracker';
@@ -21,14 +21,10 @@ export function Dashboard() {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img
-              src="/Gemini_Generated_Image_1q4q5f1q4q5f1q4q.png"
+              src="/mindshift-logo.svg"
               alt="Mindshift Logo"
-              className="w-14 h-14 object-contain"
-              style={{ imageRendering: 'high-quality' }}
+              className="h-16 w-auto object-contain"
             />
-            <h1 className="text-2xl font-semibold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
-              Mindshift
-            </h1>
           </div>
           <div className="flex items-center gap-4">
             <div className="text-right hidden sm:block">

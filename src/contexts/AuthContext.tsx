@@ -6,7 +6,7 @@ type AuthContextType = {
   user: User | null;
   profile: Profile | null;
   loading: boolean;
-  signUp: (email: string, password: string, displayName: string) => Promise<void>;
+  signUp: (email: string, password: string, displayName: string, username: string, phoneNumber: string, emergencyContactNumber: string, emergencyContactRelationship: string) => Promise<void>;
   signIn: (email: string, password: string) => Promise<void>;
   signOut: () => Promise<void>;
   resetPassword: (email: string) => Promise<void>;
@@ -115,13 +115,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setLoading(false);
   };
 
-  const signUp = async (email: string, password: string, displayName: string) => {
+  const signUp = async (email: string, password: string, displayName: string, username: string, phoneNumber: string, emergencyContactNumber: string, emergencyContactRelationship: string) => {
     if (!supabase) {
       // Demo mode - simulate successful signup
       const demoUser = {
         id: 'demo-user-id',
         email: email,
-        user_metadata: { display_name: displayName },
+        user_metadata: { display_name: displayName || username },
         app_metadata: {},
         aud: 'authenticated',
         created_at: new Date().toISOString(),
@@ -135,7 +135,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       const demoProfile = {
         id: 'demo-user-id',
         email: email,
-        display_name: displayName,
+        username: username,
+        display_name: displayName || username,
+        phone_number: phoneNumber,
+        emergency_contact_number: emergencyContactNumber,
+        emergency_contact_relationship: emergencyContactRelationship,
         current_streak: 0,
         longest_streak: 0,
         last_activity_date: null,
@@ -176,7 +180,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           await supabase.from('profiles').insert({
             id: data.user.id,
             email,
-            display_name: displayName,
+            username: username,
+            display_name: displayName || username,
+            phone_number: phoneNumber,
+            emergency_contact_number: emergencyContactNumber,
+            emergency_contact_relationship: emergencyContactRelationship,
           });
         } catch (profileError) {
           console.warn('Profile creation failed, but user was created:', profileError);

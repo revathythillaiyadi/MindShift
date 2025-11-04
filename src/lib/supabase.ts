@@ -16,12 +16,18 @@ export const supabase = hasValidCredentials
 export type Profile = {
   id: string;
   email: string;
+  username?: string | null;
   display_name: string | null;
+  phone_number?: string | null;
+  emergency_contact_number?: string | null;
+  emergency_contact_relationship?: string | null;
   current_streak: number;
   longest_streak: number;
   last_activity_date: string | null;
   voice_preference: string | null;
   voice_enabled: boolean;
+  chat_background?: string | null;
+  emoji_enabled?: boolean;
   created_at: string;
   updated_at: string;
 };

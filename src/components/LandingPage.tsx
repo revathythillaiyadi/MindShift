@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { Brain, Heart, Users, BookOpen, AlertCircle, Phone, Mail, Shield, TrendingUp, MessageCircle, Calendar, Award, ChevronRight, Menu, X } from 'lucide-react';
+import { Heart, Users, BookOpen, AlertCircle, Phone, Mail, Shield, TrendingUp, MessageCircle, Calendar, Award, ChevronRight, Menu, X, Cloud, Zap, Target, Sparkles } from 'lucide-react';
 
 interface LandingPageProps {
   onGetStarted: () => void;
+  onSignIn?: () => void;
 }
 
-export function LandingPage({ onGetStarted }: LandingPageProps) {
+export function LandingPage({ onGetStarted, onSignIn }: LandingPageProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
@@ -23,12 +24,10 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-3">
               <img
-                src="/Gemini_Generated_Image_1q4q5f1q4q5f1q4q.png"
+                src="/mindshift-logo.svg"
                 alt="Mindshift Logo"
-                className="w-16 h-16 object-contain"
-                style={{ imageRendering: 'high-quality' }}
+                className="h-20 w-auto object-contain"
               />
-              <span className="text-2xl font-semibold text-gray-800">Mindshift</span>
             </div>
 
             <div className="hidden md:flex items-center gap-8">
@@ -44,9 +43,17 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
               <button onClick={() => scrollToSection('services')} className="text-gray-600 hover:text-blue-600 transition-colors">
                 Services
               </button>
+              <button onClick={() => scrollToSection('workflow')} className="text-gray-600 hover:text-blue-600 transition-colors">
+                How It Works
+              </button>
               <button onClick={() => scrollToSection('sos')} className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors font-medium">
                 SOS
               </button>
+              {onSignIn && (
+                <button onClick={onSignIn} className="text-gray-600 hover:text-blue-600 transition-colors font-medium">
+                  Sign In
+                </button>
+              )}
               <button onClick={onGetStarted} className="px-6 py-2 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white rounded-lg hover:shadow-lg transition-all font-medium">
                 Get Started
               </button>
@@ -76,9 +83,17 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
               <button onClick={() => scrollToSection('services')} className="block w-full text-left px-4 py-2 text-gray-600 hover:bg-gray-50 rounded-lg">
                 Services
               </button>
+              <button onClick={() => scrollToSection('workflow')} className="block w-full text-left px-4 py-2 text-gray-600 hover:bg-gray-50 rounded-lg">
+                How It Works
+              </button>
               <button onClick={() => scrollToSection('sos')} className="block w-full text-left px-4 py-2 bg-red-50 text-red-600 rounded-lg font-medium">
                 SOS
               </button>
+              {onSignIn && (
+                <button onClick={onSignIn} className="block w-full text-left px-4 py-2 text-gray-600 hover:bg-gray-50 rounded-lg font-medium">
+                  Sign In
+                </button>
+              )}
               <button onClick={onGetStarted} className="block w-full px-6 py-3 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white rounded-lg font-medium">
                 Get Started
               </button>
@@ -134,10 +149,9 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
               <div className="relative bg-white rounded-3xl shadow-2xl p-8 border border-gray-100">
                 <div className="flex items-center gap-3 mb-6">
                   <img
-                    src="/Gemini_Generated_Image_1q4q5f1q4q5f1q4q.png"
+                    src="/mindshift-logo.svg"
                     alt="Mindshift Logo"
-                    className="w-16 h-16 object-contain"
-                    style={{ imageRendering: 'high-quality' }}
+                    className="h-24 w-auto object-contain"
                   />
                   <div>
                     <div className="font-semibold text-gray-900">MindShift AI</div>
@@ -156,6 +170,208 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
                     <div className="text-sm opacity-90 mb-2">MindShift AI</div>
                     <div>I hear you. Anxiety about the future is common. Let's work through this together. Can you tell me what specifically is worrying you?</div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="workflow" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">How Mindshift Works</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Your personalized journey to better mental health in five simple steps
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            {/* Left Column: Workflow Steps */}
+            <div className="space-y-6">
+              {/* Step 1 */}
+              <div className="relative">
+                <div className="bg-gradient-to-r from-orange-400 to-pink-500 rounded-2xl p-6 shadow-lg">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-2xl font-bold text-white">1</span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white">STEP 1: Pick an area of concern you relate to</h3>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute left-6 top-full w-0.5 h-6 bg-orange-400"></div>
+                <div className="absolute left-6 top-[calc(100%+1.5rem)] w-3 h-3 bg-orange-400 rounded-full"></div>
+              </div>
+
+              {/* Step 2 */}
+              <div className="relative ml-6">
+                <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-orange-400"></div>
+                <div className="bg-white border-2 border-orange-400 rounded-2xl p-6 shadow-lg ml-6">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-2xl font-bold text-orange-500">2</span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-800">STEP 2: Take a short, expert-made assessment</h3>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute left-6 top-full w-0.5 h-6 bg-orange-400 ml-6"></div>
+                <div className="absolute left-6 top-[calc(100%+1.5rem)] w-3 h-3 bg-orange-400 rounded-full ml-6"></div>
+              </div>
+
+              {/* Step 3 */}
+              <div className="relative ml-6">
+                <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-orange-400"></div>
+                <div className="bg-white border-2 border-orange-400 rounded-2xl p-6 shadow-lg ml-6">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-2xl font-bold text-orange-500">3</span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-800">STEP 3: Get a better understanding of your concerns</h3>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute left-6 top-full w-0.5 h-6 bg-orange-400 ml-6"></div>
+                <div className="absolute left-6 top-[calc(100%+1.5rem)] w-3 h-3 bg-orange-400 rounded-full ml-6"></div>
+              </div>
+
+              {/* Step 4 */}
+              <div className="relative ml-6">
+                <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-orange-400"></div>
+                <div className="bg-white border-2 border-orange-400 rounded-2xl p-6 shadow-lg ml-6">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-2xl font-bold text-orange-500">4</span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-800">STEP 4: Access a personalised plan with new activities each day</h3>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute left-6 top-full w-0.5 h-6 bg-orange-400 ml-6"></div>
+                <div className="absolute left-6 top-[calc(100%+1.5rem)] w-3 h-3 bg-orange-400 rounded-full ml-6"></div>
+              </div>
+
+              {/* Step 5 */}
+              <div className="relative ml-6">
+                <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-orange-400"></div>
+                <div className="bg-white border-2 border-orange-400 rounded-2xl p-6 shadow-lg ml-6">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-2xl font-bold text-orange-500">5</span>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-800">STEP 5: Monitor your progress as you work on yourself</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Mental Health Goals */}
+            <div className="relative">
+              {/* Background blob */}
+              <div className="absolute -top-20 -right-20 w-96 h-96 bg-green-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+              
+              <div className="relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-gray-100">
+                <div className="mb-8">
+                  <h3 className="text-3xl font-bold text-gray-900 mb-2">What can we help</h3>
+                  <p className="text-xl text-gray-600">Pick a mental health goal</p>
+                </div>
+
+                <div className="space-y-4">
+                  {/* Overcome Depression */}
+                  <div 
+                    onClick={onGetStarted}
+                    className="bg-blue-100 rounded-2xl p-6 cursor-pointer hover:shadow-lg transition-all transform hover:-translate-y-1 active:scale-95"
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="w-16 h-16 bg-blue-200 rounded-xl flex items-center justify-center">
+                        <Cloud className="w-8 h-8 text-blue-600" />
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-bold text-gray-800">Overcome Depression</h4>
+                        <p className="text-sm text-gray-600 mt-1">Find hope and healing</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Tackle Stress */}
+                  <div 
+                    onClick={onGetStarted}
+                    className="bg-yellow-50 rounded-2xl p-6 cursor-pointer hover:shadow-lg transition-all transform hover:-translate-y-1 active:scale-95"
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="w-16 h-16 bg-yellow-100 rounded-xl flex items-center justify-center">
+                        <Sparkles className="w-8 h-8 text-yellow-600" />
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-bold text-gray-800">Tackle Stress</h4>
+                        <p className="text-sm text-gray-600 mt-1">Manage daily pressures</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Manage Anxiety */}
+                  <div 
+                    onClick={onGetStarted}
+                    className="bg-purple-100 rounded-2xl p-6 cursor-pointer hover:shadow-lg transition-all transform hover:-translate-y-1 active:scale-95"
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="w-16 h-16 bg-purple-200 rounded-xl flex items-center justify-center">
+                        <Zap className="w-8 h-8 text-purple-600" />
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-bold text-gray-800">Manage Anxiety</h4>
+                        <p className="text-sm text-gray-600 mt-1">Calm your worries</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Beat Procrastination */}
+                  <div 
+                    onClick={onGetStarted}
+                    className="bg-green-100 rounded-2xl p-6 cursor-pointer hover:shadow-lg transition-all transform hover:-translate-y-1 active:scale-95"
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="w-16 h-16 bg-green-200 rounded-xl flex items-center justify-center">
+                        <Target className="w-8 h-8 text-green-600" />
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-bold text-gray-800">Beat Procrastination</h4>
+                        <p className="text-sm text-gray-600 mt-1">Build productive habits</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Improve Sleep (bonus card) */}
+                  <div 
+                    onClick={onGetStarted}
+                    className="bg-indigo-100 rounded-2xl p-6 cursor-pointer hover:shadow-lg transition-all transform hover:-translate-y-1 active:scale-95"
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="w-16 h-16 bg-indigo-200 rounded-xl flex items-center justify-center">
+                        <MessageCircle className="w-8 h-8 text-indigo-600" />
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-bold text-gray-800">Improve Sleep</h4>
+                        <p className="text-sm text-gray-600 mt-1">Rest better, feel better</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8 pt-6 border-t border-gray-200">
+                  <button
+                    onClick={onGetStarted}
+                    className="w-full px-6 py-3 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white rounded-xl font-semibold hover:shadow-lg transition-all transform hover:-translate-y-0.5"
+                  >
+                    Start Your Journey
+                  </button>
                 </div>
               </div>
             </div>
@@ -671,14 +887,12 @@ export function LandingPage({ onGetStarted }: LandingPageProps) {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div>
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center justify-center mb-4">
                 <img
-                  src="/Gemini_Generated_Image_1q4q5f1q4q5f1q4q.png"
+                  src="/mindshift-logo.svg"
                   alt="Mindshift Logo"
-                  className="w-14 h-14 object-contain"
-                  style={{ imageRendering: 'high-quality' }}
+                  className="h-28 w-auto object-contain"
                 />
-                <span className="text-xl font-semibold text-white">Mindshift</span>
               </div>
               <p className="text-sm text-gray-400">
                 Making mental health support accessible to everyone, everywhere.

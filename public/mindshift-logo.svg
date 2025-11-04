@@ -1,0 +1,115 @@
+<svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mindshiftGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#EC4899;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#A855F7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Head Silhouette (Profile, facing right) - Deep Blue/Purple -->
+  <path d="M 80 50 
+           Q 72 42, 72 32 
+           Q 72 22, 80 15 
+           Q 88 8, 100 8 
+           Q 115 8, 125 20 
+           Q 130 30, 130 42 
+           Q 130 65, 115 80 
+           Q 100 95, 80 98 
+           Q 60 95, 50 85 
+           Q 45 75, 45 65 
+           Q 45 55, 52 48 
+           Q 58 45, 65 45 
+           Q 72 45, 78 48 Z" 
+        fill="#1E1B4B" 
+        filter="url(#shadow)"/>
+  
+  <!-- Brain Design - Left Hemisphere (Pink) -->
+  <g transform="translate(85, 38)">
+    <!-- Main left hemisphere shape -->
+    <path d="M 0 5 
+             Q -2 3, 0 2 
+             Q 2 3, 4 5 
+             Q 5 8, 4 12 
+             Q 3 16, 0 18 
+             Q -3 16, -4 12 
+             Q -5 8, -4 5 
+             Q -2 4, 0 5 Z" 
+          fill="#EC4899" 
+          opacity="0.9"/>
+    
+    <!-- Brain wrinkles/folds (pink) -->
+    <path d="M -2 6 Q 0 5, 2 6" fill="none" stroke="#EC4899" stroke-width="1.2" opacity="0.8"/>
+    <path d="M -3 8 Q 0 7, 3 8" fill="none" stroke="#EC4899" stroke-width="1.2" opacity="0.8"/>
+    <path d="M -3 10 Q 0 9, 3 10" fill="none" stroke="#EC4899" stroke-width="1.2" opacity="0.8"/>
+    <path d="M -2 12 Q 0 11, 2 12" fill="none" stroke="#EC4899" stroke-width="1.2" opacity="0.8"/>
+    <path d="M -2 14 Q 0 13, 2 14" fill="none" stroke="#EC4899" stroke-width="1.1" opacity="0.75"/>
+    
+    <!-- Additional detail -->
+    <circle cx="-1" cy="8" r="1.5" fill="#EC4899" opacity="0.6"/>
+    <circle cx="1" cy="10" r="1.2" fill="#EC4899" opacity="0.6"/>
+  </g>
+  
+  <!-- Brain Design - Right Hemisphere (Blue) -->
+  <g transform="translate(105, 38)">
+    <!-- Main right hemisphere shape -->
+    <path d="M 0 5 
+             Q -2 3, 0 2 
+             Q 2 3, 4 5 
+             Q 5 8, 4 12 
+             Q 3 16, 0 18 
+             Q -3 16, -4 12 
+             Q -5 8, -4 5 
+             Q -2 4, 0 5 Z" 
+          fill="#3B82F6" 
+          opacity="0.9"/>
+    
+    <!-- Brain wrinkles/folds (blue) -->
+    <path d="M -2 6 Q 0 5, 2 6" fill="none" stroke="#3B82F6" stroke-width="1.2" opacity="0.8"/>
+    <path d="M -3 8 Q 0 7, 3 8" fill="none" stroke="#3B82F6" stroke-width="1.2" opacity="0.8"/>
+    <path d="M -3 10 Q 0 9, 3 10" fill="none" stroke="#3B82F6" stroke-width="1.2" opacity="0.8"/>
+    <path d="M -2 12 Q 0 11, 2 12" fill="none" stroke="#3B82F6" stroke-width="1.2" opacity="0.8"/>
+    <path d="M -2 14 Q 0 13, 2 14" fill="none" stroke="#3B82F6" stroke-width="1.1" opacity="0.75"/>
+    
+    <!-- Additional detail -->
+    <circle cx="-1" cy="8" r="1.5" fill="#3B82F6" opacity="0.6"/>
+    <circle cx="1" cy="10" r="1.2" fill="#3B82F6" opacity="0.6"/>
+  </g>
+  
+  <!-- Brain Stem and Connecting Parts -->
+  <g transform="translate(95, 55)">
+    <!-- Connecting corpus callosum -->
+    <ellipse cx="0" cy="-2" rx="8" ry="2" fill="#A855F7" opacity="0.7"/>
+    
+    <!-- Cerebellum left (pink) -->
+    <ellipse cx="-3" cy="5" rx="3" ry="5" fill="#EC4899" opacity="0.85"/>
+    <path d="M -5 5 Q -3 4, -1 5" fill="none" stroke="#EC4899" stroke-width="1.5" opacity="0.7"/>
+    <path d="M -5 7 Q -3 6, -1 7" fill="none" stroke="#EC4899" stroke-width="1.5" opacity="0.7"/>
+    
+    <!-- Cerebellum right (blue) -->
+    <ellipse cx="3" cy="5" rx="3" ry="5" fill="#3B82F6" opacity="0.85"/>
+    <path d="M 1 5 Q 3 4, 5 5" fill="none" stroke="#3B82F6" stroke-width="1.5" opacity="0.7"/>
+    <path d="M 1 7 Q 3 6, 5 7" fill="none" stroke="#3B82F6" stroke-width="1.5" opacity="0.7"/>
+  </g>
+  
+  <!-- Additional brain texture lines -->
+  <g transform="translate(95, 42)">
+    <!-- Vertical connections -->
+    <path d="M -8 0 Q -4 2, 0 0" fill="none" stroke="#EC4899" stroke-width="0.8" opacity="0.6"/>
+    <path d="M 0 0 Q 4 2, 8 0" fill="none" stroke="#3B82F6" stroke-width="0.8" opacity="0.6"/>
+  </g>
+  
+  <!-- Mindshift Text with Gradient (Pink to Purple to Blue) -->
+  <text x="200" y="120" font-family="'Segoe UI', Arial, sans-serif" font-size="42" font-weight="700" text-anchor="middle" letter-spacing="-1">
+    <tspan fill="url(#mindshiftGradient)">Mind</tspan>
+    <tspan fill="url(#mindshiftGradient)">shift</tspan>
+  </text>
+  
+  <!-- Tagline -->
+  <text x="200" y="150" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#4B5563" text-anchor="middle" font-weight="400">
+    Your journey to mindful growth
+  </text>
+</svg>

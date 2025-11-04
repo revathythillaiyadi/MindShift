@@ -31,7 +31,7 @@ export interface JournalEventData {
 export interface GoalEventData {
   title: string;
   completed: boolean;
-  action: 'created' | 'completed' | 'deleted';
+  action: 'created' | 'completed' | 'uncompleted' | 'deleted';
 }
 
 class WebhookService {

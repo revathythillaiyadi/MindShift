@@ -1,0 +1,47 @@
+# Python files - not needed for Vercel deployment
+*.py
+requirements.txt
+requirements_*.txt
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.pytest_cache/
+.coverage
+*.egg-info/
+
+# Python project files
+streamlit_app.py
+som_*.py
+mindshift_rag.py
+test_*.py
+download_*.py
+fix_*.py
+mock_*.py
+
+# Python data directories
+som_documents/
+test_chroma_db/
+
+# Documentation (optional - keep README.md)
+*.md
+!README.md
+
+# Audio setup guides
+AUDIO_HOSTING_GUIDE.md
+SUPABASE_STORAGE_SETUP.md
+APP_LINKS.md
+DEPLOYMENT_GUIDE.md
+
+# Environment files
+.env.local
+.env.*.local
+
+# Shell scripts (optional)
+*.sh

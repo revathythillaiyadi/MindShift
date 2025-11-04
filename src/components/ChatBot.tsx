@@ -4,6 +4,7 @@ import { supabase, ChatMessage, ChatSession } from '../lib/supabase';
 import { useAuth } from '../contexts/AuthContext';
 import { Journal } from './Journal';
 import { webhookService } from '../lib/webhook';
+import { getAudioUrls } from '../lib/audioStorage';
 
 const CRISIS_KEYWORDS = [
   'kill myself',
@@ -85,7 +86,7 @@ export function ChatBot() {
   const [ambientSound, setAmbientSound] = useState<string | null>(null);
   const [ambientVolume, setAmbientVolume] = useState(0.5);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isCrisisMode, setIsCrisisMode] = useState(false);
+  const [_isCrisisMode, setIsCrisisMode] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const recognitionRef = useRef<any>(null);
@@ -183,7 +184,7 @@ export function ChatBot() {
   }, []);
 
   const loadSessions = async () => {
-    if (!user) return;
+    if (!user || !supabase) return;
 
     const { data } = await supabase
       .from('chat_sessions')
@@ -202,7 +203,7 @@ export function ChatBot() {
   };
 
   const loadMessages = async (sessionId: string) => {
-    if (!user) return;
+    if (!user || !supabase) return;
 
     const { data } = await supabase
       .from('chat_messages')
@@ -257,13 +258,15 @@ export function ChatBot() {
 
             setMessages([assistantMsg]);
 
-            await supabase.from('chat_messages').insert({
-              user_id: user.id,
-              session_id: data.id,
-              role: 'assistant',
-              content: prompt,
-              is_journal_entry: true,
-            });
+            if (supabase) {
+              await supabase.from('chat_messages').insert({
+                user_id: user.id,
+                session_id: data.id,
+                role: 'assistant',
+                content: prompt,
+                is_journal_entry: true,
+              });
+            }
           }, 500);
         }
       }
@@ -388,9 +391,13 @@ Can you tell me one thing you need me to know about your feelings right now?`;
 
     const crisisMessage: ChatMessage = {
       id: Date.now().toString(),
+      user_id: user?.id || '',
+      session_id: currentSessionId,
       role: 'assistant',
       content: getCrisisResponse(),
-      timestamp: new Date().toISOString()
+      reframed_content: null,
+      is_journal_entry: false,
+      created_at: new Date().toISOString()
     };
 
     setMessages(prev => [...prev, crisisMessage]);
@@ -501,7 +508,7 @@ Can you tell me one thing you need me to know about your feelings right now?`;
     setMessages(prev => [...prev, userMsg]);
 
     if (supabase) {
-      const { data: insertedMsg } = await supabase.from('chat_messages').insert({
+      await supabase.from('chat_messages').insert({
         user_id: user.id,
         session_id: currentSessionId,
         role: 'user',
@@ -631,10 +638,12 @@ Can you tell me one thing you need me to know about your feelings right now?`;
 
     setSelectedVoice(voiceName);
 
-    await supabase
-      .from('profiles')
-      .update({ voice_preference: voiceName })
-      .eq('id', user.id);
+    if (supabase) {
+      await supabase
+        .from('profiles')
+        .update({ voice_preference: voiceName })
+        .eq('id', user.id);
+    }
   };
 
   const updateVoiceEnabled = async (enabled: boolean) => {
@@ -642,16 +651,14 @@ Can you tell me one thing you need me to know about your feelings right now?`;
 
     setVoiceEnabled(enabled);
 
-    await supabase
-      .from('profiles')
-      .update({ voice_enabled: enabled })
-      .eq('id', user.id);
+    if (supabase) {
+      await supabase
+        .from('profiles')
+        .update({ voice_enabled: enabled })
+        .eq('id', user.id);
+    }
   };
 
-  const stopSpeaking = () => {
-    window.speechSynthesis.cancel();
-    setIsSpeaking(false);
-  };
 
   const playAmbientSound = (soundId: string | null) => {
     // Stop any currently playing audio
@@ -667,61 +674,9 @@ Can you tell me one thing you need me to know about your feelings right now?`;
       return;
     }
 
-    // Reliable external audio URLs with fallbacks
-    const audioUrls: { [key: string]: string[] } = {
-      rain: [
-        'https://cdn.pixabay.com/download/audio/2022/03/10/audio_bb630cc098.mp3?filename=rain-and-thunder-ambient-116927.mp3',
-        'https://freesound.org/data/previews/316/316847_5123451-lq.mp3',
-        'https://www.soundjay.com/misc/sounds/rain-01.mp3'
-      ],
-      ocean: [
-        'https://cdn.pixabay.com/download/audio/2021/08/09/audio_bb630cc098.mp3?filename=ocean-waves-ambient-116927.mp3',
-        'https://freesound.org/data/previews/123/123456_7890123-lq.mp3',
-        'https://www.soundjay.com/misc/sounds/ocean-waves-01.mp3'
-      ],
-      forest: [
-        'https://cdn.pixabay.com/download/audio/2021/08/09/audio_bb630cc098.mp3?filename=forest-ambient-116927.mp3',
-        'https://freesound.org/data/previews/234/234567_8901234-lq.mp3',
-        'https://www.soundjay.com/misc/sounds/forest-01.mp3'
-      ],
-      river: [
-        'https://cdn.pixabay.com/download/audio/2021/08/09/audio_bb630cc098.mp3?filename=river-stream-ambient-116927.mp3',
-        'https://freesound.org/data/previews/345/345678_9012345-lq.mp3',
-        'https://www.soundjay.com/misc/sounds/river-01.mp3'
-      ],
-      birds: [
-        'https://cdn.pixabay.com/download/audio/2021/08/09/audio_bb630cc098.mp3?filename=birds-chirping-ambient-116927.mp3',
-        'https://freesound.org/data/previews/456/456789_0123456-lq.mp3',
-        'https://www.soundjay.com/misc/sounds/birds-01.mp3'
-      ],
-      wind: [
-        'https://cdn.pixabay.com/download/audio/2021/08/09/audio_bb630cc098.mp3?filename=wind-ambient-116927.mp3',
-        'https://freesound.org/data/previews/567/567890_1234567-lq.mp3',
-        'https://www.soundjay.com/misc/sounds/wind-01.mp3'
-      ],
-      fireplace: [
-        'https://cdn.pixabay.com/download/audio/2021/08/09/audio_bb630cc098.mp3?filename=fireplace-crackling-ambient-116927.mp3',
-        'https://freesound.org/data/previews/678/678901_2345678-lq.mp3',
-        'https://www.soundjay.com/misc/sounds/fireplace-01.mp3'
-      ],
-      meditation: [
-        'https://cdn.pixabay.com/download/audio/2021/08/09/audio_bb630cc098.mp3?filename=meditation-ambient-116927.mp3',
-        'https://freesound.org/data/previews/789/789012_3456789-lq.mp3',
-        'https://www.soundjay.com/misc/sounds/meditation-01.mp3'
-      ],
-      piano: [
-        'https://cdn.pixabay.com/download/audio/2021/08/09/audio_bb630cc098.mp3?filename=piano-ambient-116927.mp3',
-        'https://freesound.org/data/previews/890/890123_4567890-lq.mp3',
-        'https://www.soundjay.com/misc/sounds/piano-01.mp3'
-      ],
-      ambient: [
-        'https://cdn.pixabay.com/download/audio/2021/08/09/audio_bb630cc098.mp3?filename=ambient-music-116927.mp3',
-        'https://freesound.org/data/previews/901/901234_5678901-lq.mp3',
-        'https://www.soundjay.com/misc/sounds/ambient-01.mp3'
-      ]
-    };
-
-    const audioUrlList = audioUrls[soundId];
+    // Get prioritized audio URLs from centralized configuration
+    // Priority: Local → Supabase Storage → Google Drive → External fallbacks
+    const audioUrlList = getAudioUrls(soundId);
     if (!audioUrlList || audioUrlList.length === 0) {
       console.error('No audio URLs found for sound:', soundId);
       return;
@@ -774,7 +729,9 @@ Can you tell me one thing you need me to know about your feelings right now?`;
     tryAudioUrl(audioUrlList);
   };
 
-  const createAmbientSoundGenerator = (audioContext: AudioContext, soundId: string, volume: number) => {
+  // Note: createAmbientSoundGenerator function removed - not currently used
+  /*
+  const _createAmbientSoundGenerator = (audioContext: AudioContext, soundId: string, volume: number) => {
     const oscillator = audioContext.createOscillator();
     const gainNode = audioContext.createGain();
     const filterNode = audioContext.createBiquadFilter();
@@ -880,6 +837,7 @@ Can you tell me one thing you need me to know about your feelings right now?`;
       }
     };
   };
+  */
 
   const playFallbackAudio = (soundId: string) => {
     // Fallback to simple beep sounds if Web Audio API fails
@@ -929,10 +887,12 @@ Can you tell me one thing you need me to know about your feelings right now?`;
 
     setChatBackground(background);
 
-    await supabase
-      .from('profiles')
-      .update({ chat_background: background })
-      .eq('id', user.id);
+    if (supabase) {
+      await supabase
+        .from('profiles')
+        .update({ chat_background: background })
+        .eq('id', user.id);
+    }
   };
 
   const updateEmojiEnabled = async (enabled: boolean) => {
@@ -940,10 +900,12 @@ Can you tell me one thing you need me to know about your feelings right now?`;
 
     setEmojiEnabled(enabled);
 
-    await supabase
-      .from('profiles')
-      .update({ emoji_enabled: enabled })
-      .eq('id', user.id);
+    if (supabase) {
+      await supabase
+        .from('profiles')
+        .update({ emoji_enabled: enabled })
+        .eq('id', user.id);
+    }
   };
 
   const insertEmoji = (emoji: string) => {
